@@ -1,0 +1,45 @@
+.carousel-section{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.carousel-header{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between
+
+;}
+.nav-btn{
+    background-color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    
+}
+.nav-icon{
+    stroke: white;
+}
+.card{
+    min-width: 300px;
+    min-height: 300px;
+    background-color: red;
+    
+
+}
+.carousel-nav{
+    display: flex;
+    gap: 20px;
+}
+
+
+.cards-container{
+    display: flex;
+    justify-content: space-around;
+    overflow-x: scroll;
+    gap: 10px;
+    
+}
+ .cards-container::-webkit-scrollbar{
+    display: none;
+    
+}
