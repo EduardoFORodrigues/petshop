@@ -37,6 +37,7 @@
     justify-content: space-around;
     overflow-x: scroll;
     gap: 10px;
+    height: 400px;
     
 }
  .cards-container::-webkit-scrollbar{

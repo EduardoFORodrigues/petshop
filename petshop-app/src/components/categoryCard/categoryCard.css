@@ -1,20 +1,43 @@
-.category-Card{
+.category-card {
     border-radius: 12px;
     width: 280px;
     height: 350px;
     margin: 10px;
-    background-color: blue;
-
+    min-width: 280px;
 }
 
-.card-image-wrapper{
-   width:100%;
-   height: 70%;
-   background-size: cover;
-   background-position: center;
+.card-image-wrapper {
+    width: 100%;
+    height: 70%;
+    background-size: cover;
+    background-position: center;
 }
-.category-image{
-    height: 90%;
+
+.category-image {
+    height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #dddddd;
+      border-radius: 0 0 20px 20px;
+
+}
+
+.arrow-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FD7E14;
 }

@@ -6,7 +6,7 @@ import { useRef } from 'react'
 
 
 
-export default function Carousel({ title }) {
+export default function Carousel({ title, items, RenderComponent}) {
     
     //declaração de uma variavel para maninulção de variavel
     const carouselRef = useRef(null)
@@ -48,10 +48,13 @@ export default function Carousel({ title }) {
        </div>
             </div>
             <div className='cards-container ' ref={carouselRef}>
-                <div className='card'></div>
-                <div className='card'></div>
-                <div className='card'></div>
-                <div className='card'></div>
+                {items.map((item, index) => (
+                
+                <RenderComponent key={index} item={item} />
+                
+                ))}
+                    
+              
             </div>
             
 
