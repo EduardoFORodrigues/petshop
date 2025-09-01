@@ -2,4 +2,4 @@
 # git standbytheboy ReactJS
 
 
-# mazinhodeveloper git colega de curso
+# mazinhodeveloper e standbytheboy git colega de curso
