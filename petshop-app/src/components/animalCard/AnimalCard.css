@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0 5em;
+    margin: 0 4.5rem;
 }
 .animal-image-wrapper{
     display: flex;
@@ -15,6 +15,11 @@
     position: relative;
     cursor: pointer;
     background-color: #333;
+    transition: ease-in-out .5s;
+}
+.animal-image-wrapper:hover{
+    background-color: orange;
+    
 }
 .animal-image{
     width: 80%;
