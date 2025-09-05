@@ -7,15 +7,20 @@ import CategoryCarousel from './components/categoryCarosel/CategoryCarousel'
 import Animalcard from './components/animalCard/animalCard'
 import AnimalCarousel from './components/AnimalCarosel/animalCarousel'
 import Hero from './components/Hero/hero'
+import FeaturedProducts from './components/feacturedComponents/FeaturedProducts'
+import Footer from './components/footer/Footer'
 
 function App() {
   
   return (
     <>
        <Navbar/>
-      <Hero />
-      
-       <AnimalCarousel/>
+       <Hero />
+      <CategoryCarousel/>
+ 
+      <FeaturedProducts />
+      <AnimalCarousel />
+      <Footer/>
          
     </>
   )

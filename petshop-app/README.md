@@ -3,3 +3,6 @@
 
 
 # mazinhodeveloper e standbytheboy git colega de curso
+
+# CSS Nesting Syntax Highlighting
+# npm i rc-slider

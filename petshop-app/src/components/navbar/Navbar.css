@@ -16,6 +16,10 @@
     padding: 20px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     max-width: 0 auto;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    
 }
 .nav-links{
     display: flex;
