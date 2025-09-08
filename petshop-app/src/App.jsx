@@ -9,18 +9,17 @@ import AnimalCarousel from './components/AnimalCarosel/animalCarousel'
 import Hero from './components/Hero/hero'
 import FeaturedProducts from './components/feacturedComponents/FeaturedProducts'
 import Footer from './components/footer/Footer'
+import ShopSidebar from './components/ShopSidebar/ShopSidebar'
+import ProductGrid from './components/productGrid/ProductGrid'
 
 function App() {
   
   return (
     <>
-       <Navbar/>
-       <Hero />
-      <CategoryCarousel/>
+     
  
-      <FeaturedProducts />
-      <AnimalCarousel />
-      <Footer/>
+  <ProductGrid/>
+    
          
     </>
   )
