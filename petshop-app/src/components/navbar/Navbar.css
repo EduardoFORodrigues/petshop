@@ -1,92 +1,98 @@
-:root{
+:root {
     box-sizing: border-box;
 }
 
-.container{
+.navbar {
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    z-index: 9999;
+    width: 100%;
+}
+
+.container {
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-   
-}
-.navbar{
     background-color: #fff;
     border-radius: 40px;
     padding: 20px 50px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    max-width: 0 auto;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
 }
-.nav-links{
+
+.nav-links {
     display: flex;
-    gap: 30px;
-    list-style-type: none;  
-    justify-content: space-between;          
+    list-style: none;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 30px;
 }
-.nav-actions{
+
+.nav-actions {
     display: flex;
     align-items: center;
     gap: 15px;
 }
-.search-bar{
+
+.search-bar {
     position: relative;
     display: flex;
     align-items: center;
-   
-
 }
-.search-bar input{
+
+.search-bar input {
     border: none;
-    background-color: #f7f7f7;
+    background-color: #ddd;
     border-radius: 20px;
     padding: 8px 15px;
     width: 200px;
     font-size: 14px;
     outline: none;
 }
-.search-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.search-icon {
     background-color: black;
-    /*color: #fff;*/
     border: none;
     border-radius: 50%;
     width: 28px;
     height: 28px;
-    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
     right: 0;
-    margin-right:3px;
+    margin-right: 3px;
     cursor: pointer;
-    
 }
-.icon{
+
+.icon {
     stroke: white;
 }
-.icons-btn{
+
+.icon-btn {
     background: none;
     border: none;
     cursor: pointer;
     position: relative;
-    
-
 }
-.badge{
+
+.badge {
     background-color: #ff9900;
-    color: #ffff;
+    color: white;
     font-size: 10px;
-    border-radius: 50%;
     border: 1px solid white;
     font-weight: bold;
     padding: 2px 5px;
+    border-radius: 50%;
     position: absolute;
     top: -5px;
     right: -5px;
-    
+}
+
+.logo {
+    width: 7rem;
 }

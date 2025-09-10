@@ -31,7 +31,7 @@ export default function AnimalCarosel() {
                 items={animais}
                 RenderComponent={({item})=> <Animalcard animal={item}/>}
             />
-              <CTAButton text={'Compre Agora'}/>
+              
     </div>
         
     )

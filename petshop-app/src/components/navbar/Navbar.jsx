@@ -1,43 +1,45 @@
 import './Navbar.css';
-import {Search, Heart, Cart} from 'akar-icons'
-import logo from '../../assets/logo.svg'
+import { Search, Heart, Cart } from 'akar-icons';
+import Logo from '../../assets/Logo.svg';
+import { Link } from 'react-router-dom';
 
-export default function Navbar(){
-
-
-    return(
+const Navbar = () => {
+    return (
         <nav className='navbar'>
-           <div className='container'>
-            <a href="#" className=''> <img src={logo} alt="logo do peshop" /></a>
+            <div className='container'>
+                <a href="#" className='logo'>
+                    <img src={Logo} alt="Logo do Petshop" />
+                </a>
+
                 <ul className='nav-links'>
-                    <li>Inicío</li>
+                    <li><Link to='/'>início</Link></li>
                     <li>Comprar</li>
-                    <li>Sobre nós</li>
+                    <li>Sobre Nós</li>
                     <li>Contato</li>
                 </ul>
+
                 <div className='nav-actions'>
                     <div className='search-bar'>
                         <input type="text" placeholder='Pesquise aqui...' />
-                    <button className='search-icons'>
-                        <Search className="icon" size={20 }></Search>
-                        
-                    </button>
+                        <button className='search-icon'>
+                            <Search className='icon' size={20} />
+                        </button>
                     </div>
-                     <button className='icons-btn'>
-                        <Heart></Heart>  
-                        <span className='badge'>0</span>                       
+                    <button className='icon-btn'>
+                        <Heart />
+                        <span className='badge'>0</span>
                     </button>
-                    <button className='icons-btn'>
-                        <Cart></Cart>   
-                         <span className='badge'>0</span>                         
+                    <button className='icon-btn'>
+                        <Cart />
+                        <span className='badge'>0</span>
                     </button>
                 </div>
-           </div> 
+            </div>
         </nav>
-    )
+    );
 }
-    
-   
+
+export default Navbar;
 
    
 //Outro exemplo  funcation
