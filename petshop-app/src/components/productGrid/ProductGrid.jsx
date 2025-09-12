@@ -118,6 +118,9 @@ const ProductGrid = () => {
 
                 );
             }
+            catch {
+                
+            }
         }
     })
 
