@@ -2,7 +2,10 @@ import ShopSidebar from '../ShopSidebar/ShopSidebar';
 import ProductCard from '../productCard/ProductCard';
 import './ProductGrid.css';
 import Pagination from '../Pagination/Pagination';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import axios, { Axios } from 'axios';
+
+/*
 
 const todosProdutos = [
   { id: 1, name: "Camiseta", price: 29.99 },
@@ -37,7 +40,7 @@ const todosProdutos = [
   { id: 30, name: "Carteira Masculina", price: 55.00 }
 ];
 
-
+*/
 const listaDeCategorias = [
   { nome: "Brinquedos", qtd: 32 }, // índice 0
   { nome: "Roupas", qtd: 30 }, // índice 1
@@ -53,6 +56,72 @@ const listaDeMarcas = [
 const ProductGrid = () => {
     const [paginaAtual, setPaginaAtual] = useState(1);
     const produtosPorPagina = 6;
+    const [loading, setLoading] = useState(false)
+    const [pets, setPets] = useState([])
+    const maximoDeAnimais = 50;
+
+    //Chmando  API
+
+    const API_Key = "fDZCE7dupHjj485FkZKsoDf3xCCtuThpq8ScCaAx0KZGXbNYXk";
+    const API_SECRET = "P5i3Faf9U8hwR8rKWx6NLW0JITrgDNjAoWOcHzoj";
+
+    const obterToken = async () => {
+
+        const response = await axios.post(
+            "https://api.petfinder.com/v2/oauth2/token",
+            `grant_type=client_credentials&client_id=${API_KEY}&client_secret=${API_SECRET}`,
+            {
+                headers: { "Content-Type": "aplication/x-www-form-urlencoded" }
+            }
+        );
+        return response.data.acess_token;
+    }
+
+        const buscarPets = async (token, pagina, limite) => {
+            const response = await axios.get(
+                `/pf-api/animals?=${pagina}&limit=${limite}&type=Dog`,
+                {
+                    headers: { Authorization: `Bearer ${token}` }
+
+                }
+           
+            );
+
+        return response.data;
+    }
+
+    useEffect(() => {
+        const fetchTokenEPets = async () => {
+            if (loading) return;
+            setLoading(true);
+
+            try {
+                const meuToken = await obterToken();
+                const data = await buscarPets(meuToken, paginaAtual, produtosPorPagina); 
+
+                const petsComImagem = data.animals.filter(
+                    (pet) => pet.primary_photo_cropped || (pet.photos && pet.photos.length > 0)
+                );
+
+                const petsFormatados = petsComImagem.map((cachorro) => ({
+                    id: cachorro.id,
+                    name: cachorro.name,
+                    price: cachorro.breeds.primary,
+                    image: cachorro.primary_photo_cropped?.medium || (cachorro.photos && photos[0]?.medium)
+
+                }));
+                setPets(petsFormatados);
+
+                const totalConsiderado = Math.min(
+                    maximoDeAnimais,
+                    data.pagination.total_count
+
+                );
+            }
+        }
+    })
+
+
 
     // ceil serve para arrendodar pra cima
     const totalDePaginas = Math.ceil(todosProdutos.length / produtosPorPagina);
