@@ -19,3 +19,7 @@
 
 
 # consulta https://api-ninjas.com/api/animals
+
+# ia generativa
+# LLM
+# isso forma de criar api generativa
